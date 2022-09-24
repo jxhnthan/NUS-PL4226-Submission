@@ -9,4 +9,9 @@ This repository contains all the relevant documents to replicate the network con
 3. R Script (source code)
 4. R Script Output (in .pdf format)
 
+How to replicate the analysis?
+1. Download both excel spreadsheets
+2. Copy the downloaded spreadsheets to your desktop
+3. Run the source code in R (remember to set the correct working directory!)
+
 Last Updated: 24 September 2022
