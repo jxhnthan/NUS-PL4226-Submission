@@ -11,6 +11,8 @@ This repository contains all the relevant documents to replicate the network con
 3. R Script (source code)
 4. Output (R script in .pdf format, relevant networks and graphs)
 
+Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
+
 How to replicate the analysis?
 1. Download both excel spreadsheets
 2. Copy the downloaded spreadsheets to your desktop
