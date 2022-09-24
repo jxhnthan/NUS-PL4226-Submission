@@ -116,22 +116,36 @@ psp_qns_avg > mean(degree_new2)
 # TRUE, PSP MPs ask more questions than the mean
 
 # Next, let's look at betweenness centrality analysis
-# I decided to make the graph undirected for this portion as the questions
-# will be eventually answered for both oral and written -> undirected
+
+# I decided to make the graph undirected for this portion as debates
+# in parliament are not solely questions & answer, tend to be more of a
+# two-way debate
 
 max(betweenness(net, directed=F))
 which.max(betweenness(net, directed=F))
 # Ong Ye Kung has the highest betweenness centrality @ 453.04
-max.btw1 <- as.data.frame(betweenness(net, directed=F))
+
+max.btw1 <- as.data.frame(betweenness(net, directed=T))
 view(max.btw1) #view the output in a table format
 
 # Pulling data from a specific person (i.e., Lee Hsien Loong)
 betweenness(net, directed=F)[nodes$name[8]]
 # PM Lee Hsien Loong has a betweeness centrality of 61.09
 
+# Now let's compare the influence of the 3 political parties
+
+#Influence of WP MPs
+wp_influence_avg <- 16.07 #pulled from excel data
+
+#Influence of PAP MPs
+pap_influence_avg <- 40.42 #pulled from excel data
+
+#Influence of PSP MPs
+psp_influence_avg <- 8.60 #pulled from excel data
+ 
 # [Step 5: Community Analysis]
 
-#Collapsing Multiple Edges
+#Collapsing multiple edges for simplification
 
 #creating a new edges2 variable 
 edges2 <- read_excel("/Users/johnathan/Desktop/y4s1/Networks Data/Edges.xlsx")
@@ -156,8 +170,21 @@ edge_connectivity(net2)
 #both vertex and edge connectivity is equal to 1
 
 # find communities on pq network
-net2_cluster = cluster_louvain(net2) #5 groups identified
-net2_cluster
+# Using the Louvain Method and Setting Weights
+net2_louvain = cluster_louvain(net2, weights=E(net2)$Weight) 
+net2_louvain_membership <- data.frame(node=1:gorder(net2), 
+                                      community=net2_louvain$membership)
+table(net2_louvain_membership$community) #5 groups identified
+
+#modularity of the network
+modularity(net2_louvain) 
+
+#community visualization 
+V(net2)$community <- net2_louvain$membership
+plot(net2, vertex.color=V(net2)$community, 
+     vertex.label=NA,
+     vertex.size=7, 
+     layout=layout_with_lgl)
 
 # Monte Carlo Simulation (reference graphs)
 nv <- vcount(net2) #number of vertices
