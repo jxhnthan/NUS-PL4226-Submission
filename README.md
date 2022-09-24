@@ -2,7 +2,7 @@
 
 Individual Project Submission for PL4246: Networks in Psychology
 
-Semester 1, AY 2022,2023 (Dr. Cynthia Siew)
+Semester 1, AY 2022/2023 (Dr. Cynthia Siew)
 
 This repository contains all the relevant documents to replicate the network construction and data analysis!
 
