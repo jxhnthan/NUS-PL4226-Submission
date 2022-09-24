@@ -9,7 +9,7 @@ This repository contains all the relevant documents to replicate the network con
 1. Data (2 excel spreadsheets for Nodes and Edges)
 2. Parliamentary Questions (compiled in .pdf format from January 2022 to August 2022)
 3. R Script (source code)
-4. R Script Output (in .pdf format)
+4. Output (R script in .pdf format, relevant networks and graphs)
 
 How to replicate the analysis?
 1. Download both excel spreadsheets
