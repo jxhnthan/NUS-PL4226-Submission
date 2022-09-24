@@ -1,3 +1,5 @@
+#set working directory first
+
 #loading necessary packages
 library("readxl")
 library("igraph")
@@ -205,6 +207,3 @@ barplot(counts, beside=TRUE, col=c("blue", "red"),
     xlab="Number of Communities",
     ylab="Relative Frequency",
     legend=c("Fixed Size", "Fixed Degree Sequence"))
-
-rmarkdown::render("script.R", "pdf_document")
-rmarkdown::render("script.R", "pdf_document")
