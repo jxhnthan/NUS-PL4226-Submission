@@ -19,4 +19,4 @@ How to replicate the analysis?
 
 Last Updated: 24 September 2022
 
-Submission by: Johnathan Yap Wen Jie (A0201567J)
+<b>Submission by: Johnathan Yap Wen Jie (A0201567J)</b>
