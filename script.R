@@ -1,5 +1,5 @@
 # Script Prepared by Johnathan Yap (A0201567J) #
-# PL4246: Networks in Psychology (AY22/23 Semester 1)#
+# PL4246: Networks in Psychology (AY22/23 Semester 1) #
 
 #set working directory first if you haven't
 
@@ -176,6 +176,7 @@ table(net2_louvain_membership$community) #5 groups identified
 modularity(net2_louvain) #modularity is quite low @ 0.22
 
 #community visualization 
+set.seed(10)
 V(net2)$community <- net2_louvain$membership
 plot(net2, vertex.color=V(net2)$community, 
      vertex.label=NA,
