@@ -1,4 +1,7 @@
-#set working directory first
+# Script Prepared by Johnathan Yap (A0201567J) #
+# PL4246: Networks in Psychology (AY22/23 Semester 1)#
+
+#set working directory first if you haven't
 
 #loading necessary packages
 library("readxl")
@@ -25,7 +28,7 @@ summary(edges)
 
 # [Step 2: Converting Raw Data into an igraph object]
 net <- graph_from_data_frame(d=edges, vertices=nodes, directed=T)
-class(net)
+class(net) #checking if it's an igraph object
 
 E(net) # The edges of the "net" object; 1608 edges identified
 V(net) # The vertices of the "net" object; 72 vertices identified
@@ -40,7 +43,7 @@ V(net)$color <- colrs[V(net)$party.type]
 edge.start <- ends(net, es=E(net), names=F)[,1]
 edge.col <- V(net)$color[edge.start]
 
-# Plotting the graph (DIRECTED)
+# Plotting the directed graph 
 plot(net, 
      edge.arrow.size=.2, 
      edge.curved=0,
@@ -85,6 +88,7 @@ degree_new1 <- degree_out1[degree_out1$`degree(net, mode = "IN")`!=0,]
 summary(degree_new1)
 #questions RECEIVED: mean = 100.50, median = 21.00
 
+# we need to remove the zero values from the ministers
 degree_new2 <- degree_out2[degree_out2$`degree(net, mode = "OUT")`!=0,]
 summary(degree_new2)   
 #questions ASKED = mean = 28.71, median = 21.00
@@ -110,7 +114,7 @@ psp_qns_avg > mean(degree_new2)
 # Next, let's look at betweenness centrality analysis
 
 # I decided to make the graph undirected for this portion as debates
-# in parliament are not solely questions & answer, tend to be more of a
+# in parliament are not solely questions & answer, it tends to be more of a
 # two-way debate
 
 max(betweenness(net, directed=F))
@@ -161,15 +165,15 @@ vertex_connectivity(net2)
 edge_connectivity(net2)
 #both vertex and edge connectivity is equal to 1
 
-# find communities on pq network
-# Using the Louvain Method and Setting Weights
+# Now, we try to find communities on our network
+# Using the Louvain Method and setting weights
 net2_louvain = cluster_louvain(net2, weights=E(net2)$Weight) 
 net2_louvain_membership <- data.frame(node=1:gorder(net2), 
                                       community=net2_louvain$membership)
 table(net2_louvain_membership$community) #5 groups identified
 
 #modularity of the network
-modularity(net2_louvain) 
+modularity(net2_louvain) #modularity is quite low @ 0.22
 
 #community visualization 
 V(net2)$community <- net2_louvain$membership
@@ -185,6 +189,8 @@ degs <- degree(net2) #degrees
 
 ntrials <- 1000 #setting trials to 1000
 
+# running the Monte Carlo simulations
+# random graph of same order and size of our network
 num.comm.rg <- numeric(ntrials)
 for(i in (1:ntrials)){
   g.rg <- sample_gnm(nv, ne)
@@ -192,6 +198,7 @@ for(i in (1:ntrials)){
   num.comm.rg[i] <- length(c.rg)
 }
 
+# random graph of same degree as our network
 num.comm.grg <- numeric(ntrials)
 for(i in (1:ntrials)){
   g.grg <- sample_degseq(degs, method="vl")
@@ -207,3 +214,6 @@ barplot(counts, beside=TRUE, col=c("blue", "red"),
     xlab="Number of Communities",
     ylab="Relative Frequency",
     legend=c("Fixed Size", "Fixed Degree Sequence"))
+# basically, here we have 2 random graphs, one that follows the
+# same degree as our network and the other having the same size (vertices and
+# edges as our network)
