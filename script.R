@@ -121,7 +121,7 @@ max(betweenness(net, directed=F))
 which.max(betweenness(net, directed=F))
 # Ong Ye Kung has the highest betweenness centrality @ 453.04
 
-max.btw1 <- as.data.frame(betweenness(net, directed=T))
+max.btw1 <- as.data.frame(betweenness(net, directed=F))
 view(max.btw1) #view the output in a table format
 
 # Pulling data from a specific person (i.e., Lee Hsien Loong)
@@ -195,7 +195,7 @@ ntrials <- 1000 #setting trials to 1000
 num.comm.rg <- numeric(ntrials)
 for(i in (1:ntrials)){
   g.rg <- sample_gnm(nv, ne)
-  c.rg <- cluster_fast_greedy(g.rg)
+  c.rg <- cluster_louvain(g.rg)
   num.comm.rg[i] <- length(c.rg)
 }
 
@@ -203,7 +203,7 @@ for(i in (1:ntrials)){
 num.comm.grg <- numeric(ntrials)
 for(i in (1:ntrials)){
   g.grg <- sample_degseq(degs, method="vl")
-  c.grg <- cluster_fast_greedy(g.grg)
+  c.grg <- cluster_louvain(g.grg)
   num.comm.grg[i] <- length(c.grg)
 }
 
