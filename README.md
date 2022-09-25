@@ -7,9 +7,9 @@ This repository contains all the relevant documents to replicate the network con
 
 1. Amazon Narrative (.word and .pdf format)
 2. Data (2 excel spreadsheets for nodes and edges)
-3. Parliamentary Questions (compiled in .pdf format from January 2022 to August 2022)
-4. R Script (source code)
-5. Output (R script in .pdf format, relevant networks and graphs)
+3. Output (R script in .pdf format, relevant networks and graphs)
+4. Parliamentary Questions (compiled in .pdf format from January 2022 to August 2022)
+5. R Script (source code)
 
 Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
 
