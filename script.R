@@ -183,7 +183,8 @@ plot(net2, vertex.color=V(net2)$community,
      vertex.size=7, 
      layout=layout_with_lgl)
 
-# Monte Carlo Simulation (reference graphs)
+# [Step 6: Monte Carlo Simulations]
+
 nv <- vcount(net2) #number of vertices
 ne <- ecount(net2) #number of edges
 degs <- degree(net2) #degrees
@@ -215,6 +216,7 @@ barplot(counts, beside=TRUE, col=c("blue", "red"),
     xlab="Number of Communities",
     ylab="Relative Frequency",
     legend=c("Fixed Size", "Fixed Degree Sequence"))
+
 # basically, here we have 2 random graphs, one that follows the
 # same degree as our network and the other having the same size (vertices and
 # edges as our network)
