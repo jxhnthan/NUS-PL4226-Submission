@@ -10,7 +10,7 @@ This repository contains all the relevant documents to replicate the network con
 2. Data (2 excel spreadsheets for nodes and edges)
 3. Output (R script in .pdf format, relevant networks and graphs)
 4. Parliamentary Questions (compiled in .pdf format from January 2022 to August 2022)
-5. R Script (source code)
+5. script.R (R script to run the network analysis)
 
 Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
 
@@ -19,6 +19,6 @@ How to replicate the analysis?
 2. Copy the downloaded spreadsheets to your desktop
 3. Run the source code in R (remember to set the correct working directory!)
 
-Last Updated: 25 September 2022
+Last Updated: 27 September 2022
 
 <b>Submission by: Johnathan Yap Wen Jie (A0201567J)</b>
