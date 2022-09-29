@@ -4,11 +4,12 @@ Individual Project Submission for PL4246: Networks in Psychology
 
 Semester 1, AY 2022/2023 (Dr. Cynthia Siew)
 
-This repository contains all the relevant documents to replicate the network construction and data analysis:
+This repository contains all the relevant documents to replicate the network construction and data analysis for grading:
 
-1. Amazon Narrative (.word and .pdf format)
-2. Data, Scripts and Output
-3. 
+1. Amazon Narrative (.word and .pdf format) - 20%
+2. Data, Scripts and Output - 20%
+3. Final Reflections - 10%
+4. Video - 10%
 
 Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
 
