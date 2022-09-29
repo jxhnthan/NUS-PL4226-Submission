@@ -167,6 +167,7 @@ edge_connectivity(net2)
 
 # Now, we try to find communities on our network
 # Using the Louvain Method and setting weights
+set.seed(10) #setting seed to allow for replication
 net2_louvain = cluster_louvain(net2, weights=E(net2)$Weight) 
 net2_louvain_membership <- data.frame(node=1:gorder(net2), 
                                       community=net2_louvain$membership)
