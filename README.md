@@ -7,10 +7,8 @@ Semester 1, AY 2022/2023 (Dr. Cynthia Siew)
 This repository contains all the relevant documents to replicate the network construction and data analysis:
 
 1. Amazon Narrative (.word and .pdf format)
-2. Data (2 excel spreadsheets for nodes and edges)
-3. Output (R script in .pdf format, relevant networks and graphs)
-4. Parliamentary Questions (compiled in .pdf format from January 2022 to August 2022)
-5. script.R (R script to run the network analysis)
+2. Data, Scripts and Output
+3. 
 
 Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
 
