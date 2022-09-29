@@ -19,6 +19,6 @@ How to replicate the analysis?
 2. Copy the downloaded spreadsheets to your desktop
 3. Run the source code in R (remember to set the correct working directory!)
 
-Last Updated: 27 September 2022
+Last Updated: 29 September 2022
 
 <b>Submission by: Johnathan Yap Wen Jie (A0201567J)</b>
