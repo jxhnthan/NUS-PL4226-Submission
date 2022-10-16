@@ -17,12 +17,12 @@ Here's a summary of the network analysis methods utilised:
 3. Key Player Analysis
 4. Louvain Community Detection & Monte Carlo Simulations
 
-Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
-
 How to replicate the analysis?
 1. Download both excel spreadsheets
 2. Copy the downloaded spreadsheets to your desktop
 3. Run the source code in R (remember to set the correct working directory!)
+
+Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
 
 Last Updated: 16 October 2022
 
