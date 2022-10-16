@@ -10,6 +10,8 @@ library("igraphdata")
 library("dplyr")
 library("tidyverse")
 
+edge.attributes(g)$weight
+
 # [Step 1: Preparing the Nodes and Edges]
 
 #storing nodes data into a variable named "nodes"
