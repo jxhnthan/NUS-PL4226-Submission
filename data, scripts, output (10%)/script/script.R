@@ -9,8 +9,7 @@ library("igraph")
 library("igraphdata")
 library("dplyr")
 library("tidyverse")
-
-edge.attributes(g)$weight
+library("influenceR")
 
 # [Step 1: Preparing the Nodes and Edges]
 
@@ -38,7 +37,7 @@ V(net) # The vertices of the "net" object; 72 vertices identified
 # [Step 3: Aesthetics]
 
 # Generate colors based on party type
-colrs <- c("skyblue", "grey", "tomato")
+colrs <- c("skyblue", "grey", "tomato", "gold")
 V(net)$color <- colrs[V(net)$party.type]
 
 # Color the edges of the graph based on their source node color
@@ -60,6 +59,9 @@ plot(net,
 # Setting the legend for what the colors mean
 legend(x=-1.5, y=-1.1, c("WP","PAP", "PSP"), pch=21,
        col="#777777", pt.bg=colrs, pt.cex=2, cex=.8, bty="n", ncol=1)
+# WP = Workers Party
+# PAP = People's Action Party
+# PSP = Progress Singapore Party
 
 # [Step 4: Network Data Analysis]
 
@@ -113,11 +115,43 @@ psp_qns_avg <- 60/2
 psp_qns_avg > mean(degree_new2)
 # TRUE, PSP MPs ask more questions than the mean
 
+# Let's look at key player analysis
+
+# We have identified 4 key players:
+# Christopher de Souza, Tan See Leng, Lawrence Wong and Desmond Lee
+
+# Visualizing the key players
+
+set.seed(1)
+keyplayer_4 <- keyplayer(net, k = 4)
+keyplayer_4
+
+V(net)[keyplayer_4]$color <- 'gold' #setting the keyplayers to gold
+
+plot(net, 
+     edge.arrow.size=.2, 
+     edge.curved=0,
+     edge.color=edge.col, 
+     edge.curved=.1,
+     vertex.size=8,
+     vertex.frame.color="#555555",
+     vertex.label=V(net)$name, 
+     vertex.label.color="black",
+     vertex.label.cex=.15)
+
+#re-setting the legend with key players added
+legend(x=-1.5, y=-1.1, c("WP","PAP", "PSP", "KP"), pch=21,
+       col="#777777", pt.bg=colrs, pt.cex=2, cex=.8, bty="n", ncol=1)
+
 # Next, let's look at betweenness centrality analysis
 
 # I decided to make the graph undirected for this portion as debates
 # in parliament are not solely questions & answer, it tends to be more of a
 # two-way debate
+
+#remember to untick influenceR package, otherwise an error will appear
+
+detach("package:influenceR", unload=TRUE)
 
 max(betweenness(net, directed=F))
 which.max(betweenness(net, directed=F))
@@ -173,7 +207,7 @@ set.seed(10) #setting seed to allow for replication
 net2_louvain = cluster_louvain(net2, weights=E(net2)$Weight) 
 net2_louvain_membership <- data.frame(node=1:gorder(net2), 
                                       community=net2_louvain$membership)
-table(net2_louvain_membership$community) #5 groups identified
+table(net2_louvain_membership$community) #6 groups identified
 
 #modularity of the network
 modularity(net2_louvain) #modularity is quite low @ 0.22
@@ -220,6 +254,8 @@ barplot(counts, beside=TRUE, col=c("blue", "red"),
     ylab="Relative Frequency",
     legend=c("Fixed Size", "Fixed Degree Sequence"))
 
-# basically, here we have 2 random graphs, one that follows the
-# same degree as our network and the other having the same size (vertices and
-# edges as our network)
+# 2 random graphs:
+# (1) same degree as our network and the 
+# (2) other having the same size (vertices and edges as our network) 
+# acts as a control condition
+
