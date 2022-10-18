@@ -13,6 +13,8 @@ This repository contains all the relevant documents to replicate the network con
 
 Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Johnathan
 
+## Summary
+
 Here's a summary of the network analysis methods utilised:
 1. Degree Centrality 
 2. Betweeness Centrality
@@ -26,7 +28,7 @@ How to replicate the analysis?
 
 ## Important
 
-<i>(i) InfluenceR package runs into errors with igraph so remember to detach it once the key-player analysis has been conducted.</i>
+1. InfluenceR package runs into errors with igraph so remember to detach it once the key-player analysis has been conducted.
 
 ## Update History
 
