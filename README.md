@@ -24,7 +24,7 @@ How to replicate the analysis?
 2. Copy the downloaded spreadsheets to your desktop
 3. Run the source code in R (remember to set the correct working directory!)
 
-<b>IMPORTANT</b>
+##<b>IMPORTANT</b>
 
 <i>(i) InfluenceR package runs into errors with igraph so remember to detach it once the key-player analysis has been conducted.</i>
 
