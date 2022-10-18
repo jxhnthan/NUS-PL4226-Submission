@@ -28,7 +28,7 @@ How to replicate the analysis?
 
 ## Important
 
-1. InfluenceR package runs into errors with igraph so remember to detach it once the key-player analysis has been conducted.
+InfluenceR package runs into errors with igraph so remember to detach it once the key-player analysis has been conducted.
 
 ## Update History
 
