@@ -45,6 +45,7 @@ edge.start <- ends(net, es=E(net), names=F)[,1]
 edge.col <- V(net)$color[edge.start]
 
 # Plotting the directed graph 
+set.seed(1)
 plot(net, 
      edge.arrow.size=.2, 
      edge.curved=0,
@@ -207,10 +208,9 @@ set.seed(10) #setting seed to allow for replication
 net2_louvain = cluster_louvain(net2, weights=E(net2)$Weight) 
 net2_louvain_membership <- data.frame(node=1:gorder(net2), 
                                       community=net2_louvain$membership)
-table(net2_louvain_membership$community) #6 groups identified
 
-#modularity of the network
-modularity(net2_louvain) #modularity is quite low @ 0.22
+table(net2_louvain_membership$community) 
+modularity(net2_louvain) 
 
 #community visualization 
 set.seed(10)
