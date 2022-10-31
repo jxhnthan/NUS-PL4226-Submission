@@ -11,7 +11,7 @@ This repository contains all the relevant documents to replicate the network con
 3. Final Reflections - 10%
 4. Video - 10%
 
-Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-JY
+Live presentation slides can be accessed via this link: https://tinyurl.com/PL4246-Slides
 
 ## Summary
 
