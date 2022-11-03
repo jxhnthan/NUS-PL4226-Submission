@@ -36,6 +36,6 @@ InfluenceR package runs into errors with igraph so remember to detach it once th
 
 ## Update History
 
-Last Updated: 2 November 2022
+Last Updated: 3 November 2022
 
 <b>Submission by: Johnathan Yap Wen Jie (A0201567J)</b>
