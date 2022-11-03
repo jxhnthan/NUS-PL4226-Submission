@@ -18,7 +18,7 @@ Link 2: https://www.canva.com/design/DAFPfPWow_g/8bt8aYix0cOWmNsMtIoXPw/view?utm
 
 ## Summary
 
-Here's a summary of the data files
+Here's a summary of the data files:
 1. Nodes.xl (contains information about the MPs)
 2. Edges.xl (contains information about the PQs)
 3. Parliament Questions PDFs (compilation of all order papers)
