@@ -18,6 +18,7 @@ Here's a summary of the data files:
 1. Nodes.xl (contains information about the MPs)
 2. Edges.xl (contains information about the PQs)
 3. Parliament Questions PDFs (compilation of all order papers)
+4. Output (pdfs of networks, final R output in pdf)
 
 Here's a summary of the network analysis methods utilised:
 1. Degree Centrality 
