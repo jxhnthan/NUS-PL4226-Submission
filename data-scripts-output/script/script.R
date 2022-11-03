@@ -13,15 +13,18 @@ library("influenceR")
 
 # [Step 1: Preparing the Nodes and Edges]
 
-#please help to change "johnathan" to your username
+#please set working directory before running the code
+setwd("~/Desktop/political-networks-main/data-scripts-output/data")
 
 #storing nodes data into a variable named "nodes"
-nodes <- read_excel("/Users/johnathan/Desktop/political-networks-main/data-scripts-output/data/Nodes.xlsx")
+nodes <- read_excel("Nodes.xlsx")
+
 #viewing the output for the nodes
 view(nodes)
 
 #storing edges data into a variable named "edges"
-edges <- read_excel("/Users/johnathan/Desktop/political-networks-main/data-scripts-output/data/Edges.xlsx")
+edges <- read_excel("Edges.xlsx")
+
 #viewing the output for edges
 view(edges)
 
