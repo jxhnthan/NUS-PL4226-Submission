@@ -13,13 +13,15 @@ library("influenceR")
 
 # [Step 1: Preparing the Nodes and Edges]
 
+#please help to change "johnathan" to your username
+
 #storing nodes data into a variable named "nodes"
-nodes <- read_excel("/Users/johnathan/Desktop/y4s1/Networks Data/Nodes.xlsx")
+nodes <- read_excel("/Users/johnathan/Desktop/political-networks-main/data-scripts-output/data/Nodes.xlsx")
 #viewing the output for the nodes
 view(nodes)
 
 #storing edges data into a variable named "edges"
-edges <- read_excel("/Users/johnathan/Desktop/y4s1/Networks Data/Edges.xlsx")
+edges <- read_excel("/Users/johnathan/Desktop/political-networks-main/data-scripts-output/data/Edges.xlsx")
 #viewing the output for edges
 view(edges)
 
@@ -146,9 +148,9 @@ legend(x=-1.5, y=-1.1, c("WP","PAP", "PSP", "KP"), pch=21,
 
 # Next, let's look at betweenness centrality analysis
 
-# I decided to make the graph undirected for this portion as debates
-# in parliament are not solely questions & answer, it tends to be more of a
-# two-way debate
+# For betweenness centrality to work for my network, it will have to be
+# an undirected graph. In reality, this is also in-line with how PQs are posed
+# in parliament as PQs are not solely a one-way conversation
 
 #remember to untick influenceR package, otherwise an error will appear
 
