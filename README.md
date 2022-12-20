@@ -4,10 +4,6 @@ Individual Project Submission for PL4246: Networks in Psychology
 
 Semester 1, AY 2022/2023 (Dr. Cynthia Siew)
 
-Live presentation can be accessed via this link:
-
-Link 1: https://www.loom.com/share/7ee3bc1ee1554ab6a2f3eb4415e2c804?sscid=b1k6_19xax&utm_source=shareasale&utm_medium=affiliates&utm_campaign=389818
-
 Live presentation slides can be accessed via this link: 
 
 Link 1: https://www.canva.com/design/DAFPfPWow_g/8bt8aYix0cOWmNsMtIoXPw/view?utm_content=DAFPfPWow_g&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
